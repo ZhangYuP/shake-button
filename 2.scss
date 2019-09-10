@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+@mixin buttonShadow($color) {
+  background: $color;
+  box-shadow: 0 5px 0 0 darken($color, 15%);
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  border-radius: 4px;
+  margin: 0 40px;
+
+  &:first-child {
+    @include buttonShadow(#55acee);
+    &:hover {
+      animation: {
+        duration: 0.4s;
+        name: shake;
+      }
+    }
+  }
+
+  &:nth-child(2) {
+    @include buttonShadow(#2ecc71);
+    &:hover {
+      animation: {
+        duration: 0.3s;
+        name: shakeY;
+      }
+    }
+  }
+}
+
+$n: 10%;
+$n2: 15%;
+$step: 25%;
+@keyframes shake {
+  @for $i from 0 through 5 {
+    #{$i * $step} {
+      @if $i % 2 == 0 {
+        transform: translateX(-$n);
+      } @else {
+        transform: translateX($n);
+      }
+    }
+  }
+}
+@keyframes shakeY {
+  @for $i from 0 to 5 {
+    #{$i * $step} {
+      @if $i % 2 == 0 {
+        transform: translateY(-$n2);
+      } @else {
+        transform: translateY($n2);
+      }
+    }
+  }
+}
