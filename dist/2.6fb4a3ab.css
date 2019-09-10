@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  border-radius: 4px;
+  margin: 0 40px;
+}
+button:first-child {
+  background: #55acee;
+  box-shadow: 0 5px 0 0 #1689e0;
+}
+button:first-child:hover {
+  animation-duration: 0.4s;
+  animation-name: shake;
+}
+button:nth-child(2) {
+  background: #2ecc71;
+  box-shadow: 0 5px 0 0 #208e4e;
+}
+button:nth-child(2):hover {
+  animation-duration: 0.3s;
+  animation-name: shakeY;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(-10%);
+  }
+  25% {
+    transform: translateX(10%);
+  }
+  50% {
+    transform: translateX(-10%);
+  }
+  75% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(-10%);
+  }
+  125% {
+    transform: translateX(10%);
+  }
+}
+@keyframes shakeY {
+  0% {
+    transform: translateY(-15%);
+  }
+  25% {
+    transform: translateY(15%);
+  }
+  50% {
+    transform: translateY(-15%);
+  }
+  75% {
+    transform: translateY(15%);
+  }
+  100% {
+    transform: translateY(-15%);
+  }
+}
+
+/*# sourceMappingURL=/2.6fb4a3ab.css.map */
